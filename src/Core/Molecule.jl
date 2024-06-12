@@ -7,7 +7,7 @@ using Fermi.Options
 using Fermi.PhysicalConstants: atomic_number, bohr_to_angstrom
 
 using LinearAlgebra
-using Formatting
+using Format: format
 
 import Base: show
 
@@ -110,11 +110,11 @@ Returns a nicely formatted string with all the molecule's information
 """
 function string_repr(M::Molecule)
     out = ""
-    out = out*format("Molecule:\n\n")
-    out = out*format(Molecules.get_xyz(M.atoms))
-    out = out*format("\n")
-    out = out*format("\nCharge: {}   ", M.charge)
-    out = out*format("Multiplicity: {}   \n", M.multiplicity)
+    out = out* "Molecule:\n\n"
+    out = out* Molecules.get_xyz(M.atoms)
+    out = out* "\n"
+    out = out* "\nCharge: $(M.charge)   "
+    out = out* "Multiplicity: $(M.multiplicity)   \n"
     return out
 end
 

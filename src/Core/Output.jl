@@ -1,5 +1,5 @@
 using Fermi.Options
-using Formatting
+using Format: format
 
 export output
 

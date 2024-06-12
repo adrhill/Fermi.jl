@@ -2,7 +2,7 @@ using Fermi.DIIS
 
 using TensorOperations
 using LinearAlgebra
-using Formatting
+using Format: format
 import Base: show
 
 export UHF
